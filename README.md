@@ -3,6 +3,12 @@
 Téléchargez facilement vos musiques depuis YouTube !
 
 ## Installation
+
+__1. Fichier exécutable__
+
+Télécharger le fichier : https://github.com/QGarot/youtubedownloader/releases/download/v1/main.exe puis le placer sur le bureau (par exemple). Le programme créera un dossier musique là où le fichier main.exe sera placé.
+
+__2. Via Python__
 - Installer Python : https://www.python.org/downloads/ (bien cocher *Add Python to PATH* au début de l'installation)
 - Télécharger **YoutubeDownloader** [en cliquant ici](https://github.com/QGarot/youtubedownloader/archive/refs/heads/master.zip) puis extraire le dossier **youtubedownloader-master** (sur le bureau par exemple)
 - Lancer l'invite de commande en tapant "*cmd*" dans la barre de recherche Windows, puis éxecuter :
