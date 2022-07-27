@@ -1,4 +1,4 @@
-from pytube import Search
+from pytube import Search, YouTube
 from urllib.request import urlopen
 import music_tag
 import os
@@ -10,15 +10,19 @@ path = os.getcwd() + "\\musiques"
 def run1():
     active = True
     while active:
-        search = str(input("Enter title of a song >>> "))
-        videos_ytb = Search(search).results
-        print("We found : ")
-        for i in range(len(videos_ytb)):
-            print(str(i + 1) + ") " + videos_ytb[i].title + " de : " + videos_ytb[i].author)
+        search = str(input("Enter title/link of a song >>> "))
 
-        n = int(input("Which one do you want to save? >>> "))
-        videos_ytb = videos_ytb[n - 1]
-        download_mp3(videos_ytb)
+        if search[0:5] == "https":
+            video_ytb = YouTube(search)
+        else:
+            videos_ytb = Search(search).results
+            print("We found : ")
+            for i in range(len(videos_ytb)):
+                print(str(i + 1) + ") " + videos_ytb[i].title + " de : " + videos_ytb[i].author)
+
+            n = int(input("Which one do you want to save? >>> "))
+            video_ytb = videos_ytb[n - 1]
+        download_mp3(video_ytb)
         active = str(input("Do you want to download an other music? >>> ")) == "y"
         print("__________________________________________________________")
 
